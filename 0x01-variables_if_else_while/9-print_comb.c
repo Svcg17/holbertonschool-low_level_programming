@@ -1,4 +1,4 @@
-#include<stdio.h>
+ #include<stdio.h>
 /**
  * main - Entry point
  *
@@ -7,13 +7,15 @@
 int main(void)
 {
 int c = '0';
-int d = ',';
-int e = ' ';
 while (c <= '9')
 {
 putchar(c);
-putchar(d);
-putchar(e);
+putchar(',');
+putchar(' ');
+if (c == '9')
+{
+putchar (c);
+}
 c = c + 1;
 }
 printf("\n");
