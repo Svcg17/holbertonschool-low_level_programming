@@ -1,4 +1,4 @@
- #include<stdio.h>
+#include<stdio.h>
 /**
  * main - Entry point
  *
@@ -6,18 +6,16 @@
  */
 int main(void)
 {
-int c = '0';
-while (c <= '9')
+int c;
+for (c = '0'; c <= '9'; c++)
 {
 putchar(c);
+if (c != '9')
+{
 putchar(',');
 putchar(' ');
-if (c == '9')
-{
-putchar (c);
 }
-c = c + 1;
 }
-printf("\n");
+putchar('\n');
 return (0);
 }
