@@ -6,18 +6,21 @@
 */
 int main(void)
 {
-int c = 0;
-while (c < 100)
+int c;
+int d;
+for (d = '0'; d <= '9'; d++)
 {
-putchar((c / 10) + '0');
-putchar((c % 10) + '0');
-if (c != 99)
+for (c = '0'; c <= '9'; c++)
+{
+putchar(d);
+putchar(c);
+if (c + d != 114)
 {
 putchar(',');
 putchar(' ');
 }
-c = c + 1;
 }
-putchar('\n');
+}
+printf("\n");
 return (0);
 }
