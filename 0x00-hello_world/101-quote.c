@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-write(0, "and that piece of art is useful\" - Dora Korpar, 2015-10-19,1", 58);
+write(1, "and that piece of art is useful\" - Dora Korpar, 2015-10-19,1", 58);
 putchar('\n');
-return (0);
+return (1);
 }
