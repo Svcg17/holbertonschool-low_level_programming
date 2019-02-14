@@ -11,17 +11,21 @@ else if (n <= 98)
 {
 for (i = n; n <= 98; i++)      
 {
+  if (i != 98)
+    {
 printf("%d, ", n);
-n++;
+    }
 }
 }
 else if (n >= 98)
 {
 for (i = n; n >= 98; i--)
 {
+  if (i != 98)
+    {
  printf("%d, ", n);
- n--;
     }
+ }
 }
 putchar('\n');
 }
