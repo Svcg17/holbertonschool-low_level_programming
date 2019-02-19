@@ -10,7 +10,7 @@ int _strlen(char *s)
 
 	for (i = 0; *s != '\0'; i++)
 	{
-		s++;
+		++s;
 	}
 	return (i);
 }
@@ -18,6 +18,7 @@ int _strlen(char *s)
  * print_rev - print a string in reverse.
  * @s: pointer to a char.
  */
+
 void print_rev(char *s)
 {
 	int len, i;
