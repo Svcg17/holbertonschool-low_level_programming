@@ -20,13 +20,13 @@ int _strlen(char *s)
  */
 void puts2(char *str)
 {
-  int i = 0;
-  int len;
+	int i = 0;
+	int len;
 
-  len = _strlen(str);
-  for(i = 0; i <= len - 1; i+=2)
-  {
-	  _putchar(str[i]);
-  }
-  _putchar('\n');
+	len = _strlen(str);
+	for (i = 0; i <= len - 1; i += 2)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
 }
