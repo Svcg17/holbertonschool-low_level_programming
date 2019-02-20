@@ -17,12 +17,13 @@ int _strlen(char *s)
 }
 /**
  * print_array - print n elements of an array of ints.
- * @s: pointer to an int
+ * @a: pointer to an int
  * @n: elements to be printed
  */
 void print_array(int *a, int n)
 {
 	int i;
+
 	for (i = 0; i <= n - 1; i++)
 	{
 		printf("%d", a[i]);
