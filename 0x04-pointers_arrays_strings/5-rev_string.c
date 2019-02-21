@@ -21,22 +21,13 @@ int _strlen(char *s)
  */
 void rev_string(char *s)
 {
-	int i, len;
-	char *b, *e, c;
+	int i, len, c;
 
-	len = _strlen(s);
-	b = s;
-	e = s;
-	for (i = 0; i < len - 1; i++)
-	{
-		e++;
-	}
+	len = _strlen(s) - 1;
 	for (i = 0; i < len / 2; i++)
 	{
-		c = *e;
-		*e = *b;
-		*b = c;
-		b++;
-		e--;
+		c = s[i];
+		s[i] = s[len - i];
+		s[len - i] = c;
 	}
 }
