@@ -21,9 +21,9 @@ int _strlen(char *s)
  */
 char *cap_string(char *s)
 {
-        int i = 0;
+	int i = 0;
 
-        for (i = 0; s[i]; i++)
+	for (i = 0; s[i]; i++)
 	{
 		if (i == 0)
 		{
@@ -36,12 +36,12 @@ char *cap_string(char *s)
 		if ((s[i] == ' ') || (s[i] >= 'A' && s[i] <= 'Z'))
 		{
 			++i;
-			if(s[i] >= 'a' && s[i] <= 'z')
+			if (s[i] >= 'a' && s[i] <= 'z')
 			{
 				s[i] = s[i] - 32;
 				continue;
 			}
 		}
 	}
-        return (s);
+	return (s);
 }
