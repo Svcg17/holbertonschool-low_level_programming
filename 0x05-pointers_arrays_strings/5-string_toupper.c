@@ -17,6 +17,7 @@ int _strlen(char *s)
 /**
  * string_toupper - function that changes all lowercase to uppercase.
  * @s: pointer to a char.
+ * Return: s.
  */
 char *string_toupper(char *s)
 {
