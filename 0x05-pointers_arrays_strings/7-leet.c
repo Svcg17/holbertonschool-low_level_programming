@@ -7,11 +7,12 @@
 char *leet(char *s)
 {
 	int i, d;
-	char ch[] = {'a', 'A', '4', 'e', 'E', '3', 'o', 'O', '0', 't', 'T', '7', 'l', 'L', '1'};
+	char ch[] = {'a', 'A', '4', 'e', 'E', '3', 'o',
+'O', '0', 't', 'T', '7', 'l', 'L', '1'};
 
-	for(i = 0; s[i]; i++)
+	for (i = 0; s[i]; i++)
 	{
-		for (d = 2; d < (int)sizeof(ch); d+=3)
+		for (d = 2; d < (int)sizeof(ch); d += 3)
 		{
 			if (s[i] == ch[d - 1] || s[i] == ch[d - 2])
 			{
