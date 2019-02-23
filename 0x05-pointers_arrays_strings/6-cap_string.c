@@ -15,32 +15,43 @@ int _strlen(char *s)
 	return (i);
 }
 /**
+ * separator - hhhh
+ * @c: pointer to a char for the length.
+ * Return: i.
+ */
+int separator(char *c)
+{
+	char sepa[] = {' ','\t','\n',',',';','.','!',
+		     '?','"','(',')','{','}'};
+	int i;
+	i = _strlen(sepa) - 1;
+	while(i--)
+	{
+		if (*c == sepa[i])
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
+/**
  * cap_string - function that capitalizes all words of a string.
  * @s: pointer to a char.
  * Return: i.
  */
 char *cap_string(char *s)
 {
-	int i = 0;
+	int i;
 
-	for (i = 0; s[i]; i++)
+	if(*s >= 'a' && *s <= 'z')
 	{
-		if (i == 0)
+		*s = *s - 32;
+	}
+	for (i = 1; s[i]; i++)
+	{
+		if (s[i] >= 'a' && s[i] <= 'z'&& separator(&s[i - 1]))
 		{
-			if ((s[i] >= 'a' && s[i] <= 'z'))
-			{
-				s[i] = s[i] - 32;
-			}
-			continue;
-		}
-		if ((s[i] == ' ') || (s[i] >= 'A' && s[i] <= 'Z'))
-		{
-			++i;
-			if (s[i] >= 'a' && s[i] <= 'z')
-			{
-				s[i] = s[i] - 32;
-				continue;
-			}
+			s[i] = s[i] - 32;
 		}
 	}
 	return (s);
