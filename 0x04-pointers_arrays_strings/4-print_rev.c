@@ -22,6 +22,7 @@ int _strlen(char *s)
 void print_rev(char *s)
 {
 	int i =  _strlen(s);
+
 	while (i--)
 	{
 		_putchar(s[i]);
