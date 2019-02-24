@@ -40,3 +40,5 @@ This project is about the basics content of C programming language including var
   10. 00...99
   11. Inventing is a combination of brains and materials. The more brains you use, the less material you need 
   12. The success combination in business is: Do what you do better... and: do more of what you do... 
+# Author
+Sofia Cheung
