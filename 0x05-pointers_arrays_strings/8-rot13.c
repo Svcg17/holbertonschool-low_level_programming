@@ -11,9 +11,9 @@ char *rot13(char *s)
 	char a[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 	char b[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
-	for (i = 0; i < a[i] || i < b[j]; i++)
+	for (i = 0; s[i]; i++)
 	{
-		for (j = 0; a[j]; j++)
+		for (j = 0; j < 52; j++)
 		{
 			if (s[i] == a[j])
 			{
