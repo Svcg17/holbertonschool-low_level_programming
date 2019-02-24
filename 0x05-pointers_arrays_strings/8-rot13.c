@@ -11,7 +11,7 @@ char *rot13(char *s)
 	char a[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 	char b[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
-	for (i = 0; i <= s[i]; i++)
+	for (i = 0; i <= s[i] || i <= b[j]; i++)
 	{
 		for (j = 0; a[j]; j++)
 		{
