@@ -9,6 +9,7 @@ int _strlen(char *s)
 
 int palindrome(char *s, int b, int e)
 {
+	int c = 1;
 	if (b <= e)
 	{
 		if (s[b] == s[e])
@@ -17,7 +18,7 @@ int palindrome(char *s, int b, int e)
 			return 0;
 	}
 	else
-		return (1);
+		return (c);
 }
 
 /**
