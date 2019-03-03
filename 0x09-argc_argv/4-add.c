@@ -31,21 +31,18 @@ int main(int argc, char *argv[])
 
 	if (argc <= 1)
 	{
-		printf("0\n");
+		printf("%d\n", 0);
 		return (0);
 	}
 
 	for (i = 1; i < argc; i++)
 	{
-		if (_isdigit(argv[i]))
-		{
-			sum = sum + atoi(argv[i]);
-		}
-		else
+		if (!_isdigit(argv[i]))
 		{
 			printf("Error\n");
 			return (1);
 		}
+	       	sum = sum + atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
