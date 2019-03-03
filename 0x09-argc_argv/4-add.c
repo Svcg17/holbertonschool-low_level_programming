@@ -2,20 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * _isdigit - checks for a digit from 0 through 9.
- * @s: char taken to check the conditions.
- * Return: 1 is c is digit.
+ * isNumeric - function that checks if whole string is a digit.
+ * @str: string to check.
+ * Return: 1 if is a digit, 0 if it is not.
  */
-int _isdigit(char *s)
+int isNumeric(const char *str)
 {
-	int i;
-
-	for (i = 0; s[i]; i++)
+	while (*str != '\0')
 	{
-		if ((s[i] < '0' || s[i] > '9') && (i == 0 && s[i] == '-'))
-		{
+		if (*str < '0' || *str > '9')
 			return (0);
-		}
+		str++;
 	}
 	return (1);
 }
@@ -31,18 +28,21 @@ int main(int argc, char *argv[])
 
 	if (argc <= 1)
 	{
-		printf("%d\n", 0);
+		printf("0\n");
 		return (0);
 	}
 
 	for (i = 1; i < argc; i++)
 	{
-		if (!_isdigit(argv[i]))
+		if (isNumeric(argv[i]))
+		{
+			sum = sum + atoi(argv[i]);
+		}
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-	       	sum = sum + atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
