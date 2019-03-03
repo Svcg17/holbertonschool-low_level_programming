@@ -3,19 +3,21 @@
 #include <stdlib.h>
 /**
  * _isdigit - checks for a digit from 0 through 9.
- * @c: integer taken to check the conditions.
+ * @s: char taken to check the conditions.
  * Return: 1 is c is digit.
  */
-int _isdigit(int c)
+int _isdigit(char *s)
 {
-	if (c >= 48 && c <= 57)
+	int i;
+
+	for (i = 0; s[i]; i++)
 	{
-		return (1);
+		if ((s[i] < '0' || s[i] > '9') && (i == 0 && s[i] == '-'))
+		{
+			return (0);
+		}
 	}
-	else
-	{
-		return (0);
-	}
+	return (1);
 }
 /**
  * main - Entry point
@@ -35,7 +37,7 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		if (_isdigit(*argv[i]))
+		if (_isdigit(argv[i]))
 		{
 			sum = sum + atoi(argv[i]);
 		}
