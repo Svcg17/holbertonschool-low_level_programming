@@ -9,7 +9,7 @@ int _strlen(char *s)
 {
 	int i;
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] != '\0'; i++)
 		;
 	return (i);
 }
@@ -39,19 +39,18 @@ char *_strcpy(char *dest, char *src)
 char *_strdup(char *str)
 {
 	char *s;
-	int len = _strlen(str);
-
-	s = malloc (sizeof(char) * len + 1);
+	int len = _strlen(str) - 1;
 
 	if (str == '\0')
 		return ('\0');
+
+	s = malloc(sizeof(char) * (len + 1));
 
 	if (s == '\0')
 	{
 		free(s);
 		return ('\0');
 	}
-
 	_strcpy(s, str);
 	return (s);
 }
