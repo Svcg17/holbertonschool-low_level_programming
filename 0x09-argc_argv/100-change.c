@@ -46,12 +46,12 @@ int main(int argc, char *argv[])
 {
 	int number;
 
-	number = atoi(argv[1]);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	number = atoi(argv[1]);
 	if (number < 0)
 	{
 		printf("0\n");
