@@ -22,12 +22,14 @@ int _strlen(char *s)
 char *_strcpy(char *dest, char *src)
 {
 	int i;
-
+	char *s;
 	for (i = 0; src[i]; i++)
 	{
 		dest[i] = src[i];
 	}
-	return (dest);
+	dest[i] = src[i];
+	s = dest;
+	return (s);
 }
 /**
  * _strdup - returns a pointer to a newly allocated space in memory
