@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int first = 0;
+	int first = 1;
 	int second = 1;
 	int sum = 0;
 	int i;
