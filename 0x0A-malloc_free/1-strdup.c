@@ -21,16 +21,13 @@ int _strlen(char *s)
  */
 char *_strcpy(char *dest, char *src)
 {
-	char *c = dest;
+	int i;
 
-	while (*src != '\0')
+	for (i = 0; src[i]; i++)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[i] = src[i];
 	}
-	*dest = '\0';
-	return (c);
+	return (dest);
 }
 /**
  * _strdup - returns a pointer to a newly allocated space in memory
@@ -44,12 +41,16 @@ char *_strdup(char *str)
 	char *s;
 	int len = _strlen(str);
 
+	s = malloc (sizeof(char) * len + 1);
+
 	if (str == '\0')
 		return ('\0');
 
-	s = malloc(len + 1);
 	if (s == '\0')
+	{
+		free(s);
 		return ('\0');
+	}
 
 	_strcpy(s, str);
 	return (s);
