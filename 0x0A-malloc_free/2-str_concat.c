@@ -27,16 +27,13 @@ char *str_concat(char *s1, char *s2)
 	int len;
 	char *c;
 
-	if (s1 == '\0' && s2 == '\0')
-		return ('\0');
 	if (s1 == '\0')
 		s1 = "";
 	if (s2 == '\0')
 		s2 = "";
 
-	len = _strlen(s1) + _strlen(s2) + 1;
-	new = malloc(len);
-
+	len = _strlen(s1) + _strlen(s2);
+        new = malloc(sizeof(char) * len + 1);
 
 	if (new == '\0')
 		return ('\0');
