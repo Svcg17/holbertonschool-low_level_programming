@@ -1,37 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * _strlen - function that returns the length of a string.
- * @s: pointer to a char for the length.
- * Return: i.
- */
-int _strlen(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i);
-}
-/**
- * _strcpy - function that copies the string pointed to by src.
- * @dest: pointer to a char.
- * @src: pointer to a char.
- * Return: the pointer to dest (c).
- */
-char *_strcpy(char *dest, char *src)
-{
-	int i;
-	char *s;
-	for (i = 0; src[i]; i++)
-	{
-		dest[i] = src[i];
-	}
-	dest[i] = src[i];
-	s = dest;
-	return (s);
-}
-/**
  * _strdup - returns a pointer to a newly allocated space in memory
  * containing a copy of the string given as parameter.
  * @str: string to make a copy of.
@@ -41,18 +10,26 @@ char *_strcpy(char *dest, char *src)
 char *_strdup(char *str)
 {
 	char *s;
-	int len = _strlen(str);
+	int i, j;
 
 	if (str == '\0')
 		return ('\0');
 
-	s = malloc(len + 1);
+	for (i = 0; str[i]; i++)
+		;
+
+	s = malloc(sizeof(char) * (i + 1));
 
 	if (s == '\0')
 	{
-		free(s);
 		return ('\0');
 	}
-	_strcpy(s, str);
+
+	for (j = 0; str[j]; j++)
+	{
+		s[j] = str[j];
+	}
+
+	s[j + 1] = 0;
 	return (s);
 }
