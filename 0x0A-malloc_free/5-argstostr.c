@@ -9,6 +9,9 @@ int _strlen(char *s)
 {
 	int i;
 
+	if (s == '\0')
+		return (0);
+
 	for (i = 0; s[i] != '\0'; i++)
 		;
 	return (i);
@@ -22,25 +25,24 @@ int _strlen(char *s)
 char *argstostr(int ac, char **av)
 {
 	char *cat;
-	int  i, j, c, a, b, t = 0;
+	int  i, len, a, b, t = 0;
 
 	if (ac == 0 || av == '\0')
 		return ('\0');
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j]; j++)
-			c++;
+		len = len + _strlen(av[i]);
 	}
 
-	cat = malloc(sizeof(char) * c);
+	cat = malloc(sizeof(char) * len + ac + 1);
 
 	if (cat == '\0')
 		return ('\0');
 
 	for (a = 0; a < ac; a++)
 	{
-		for (b = 0; av[a][b]; b++)
+		for (b = 0; av[a][b] != '\0'; b++)
 		{
 			cat[t] = av[a][b];
 			t++;
