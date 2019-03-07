@@ -29,12 +29,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	len = (_strlen(s1) + (_strlen(s2) - n));
 
-	if (s1 == '\0' || s2 == '\0')
-		return ("");
+	if (s1 == '\0')
+		s1 = "";
+	if (s2 == '\0')
+		s2 = "";
 
-	array = malloc(sizeof(char) * len);
+	array = malloc(sizeof(char) * len + 1);
 	if (array == '\0')
 		return ('\0');
+	if ((int)n > _strlen(s2))
+		n = _strlen(s2);
 
 	for (i = 0; s1[i]; i++)
 		array[i] = s1[i];
