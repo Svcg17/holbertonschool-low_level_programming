@@ -50,20 +50,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (new == '\0')
 		return ('\0');
 	n = _strdup(name);
-	if (n == '\0')
+	if (n == '\0' && name != '\0')
 	{
 		free(new);
 		return('\0');
 	}
 	o = _strdup(owner);
-	if (o == '\0')
+	if (o == '\0' && owner != '\0')
 	{
 		free(new);
+		free(n);
 		return('\0');
 	}
 
-	new->name = name;
+	new->name = n;
 	new->age = age;
-	new->owner = owner;
+	new->owner = o;
 	return (new);
 }
