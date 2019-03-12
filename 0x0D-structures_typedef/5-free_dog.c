@@ -6,5 +6,7 @@
  */
 void free_dog(dog_t *d)
 {
+	free(d->n);
+	free(d->o);
 	free(d);
 }
