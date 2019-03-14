@@ -19,11 +19,16 @@ int (*get_op_func(char *s))(int, int)
 
 	while (ops[i].op != NULL)
 	{
-/* if position i in ops content == the char in s, if the char in s in only one*/
+/* if position i in ops content = the char in s, if the char in s in only one*/
 /* return the pointer to the func matching it*/
 		if (ops[i].op[0] == *s)
-			return(ops[i].f);
+			return (ops[i].f);
 		i++;
+		if (*s == '\0' && s[1] == '\0')
+		{
+			printf("Error\n");
+			exit(100);
+		}
 	}
 	return (NULL);
 }
