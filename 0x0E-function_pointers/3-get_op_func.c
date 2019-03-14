@@ -21,14 +21,9 @@ int (*get_op_func(char *s))(int, int)
 	{
 /* if position i in ops content = the char in s, if the char in s in only one*/
 /* return the pointer to the func matching it*/
-		if (ops[i].op[0] == *s)
+		if (ops[i].op[0] == *s && s[1] == '\0')
 			return (ops[i].f);
 		i++;
-		if (*s == '\0' && s[1] == '\0')
-		{
-			printf("Error\n");
-			exit(100);
-		}
-	}
+ 	}
 	return (NULL);
 }
