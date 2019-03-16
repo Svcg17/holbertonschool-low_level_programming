@@ -4,11 +4,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * struct datatype - struct with different data types
+ * @type: string to match.
+ * @func: function pointer to return if matches with type.
+ */
 typedef struct datatype
 {
 	char *type;
 	void (*func)(va_list list);
-}data_t;
+} data_t;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
