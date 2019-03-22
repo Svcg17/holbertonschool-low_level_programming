@@ -13,20 +13,17 @@ list_t *add_node(list_t **head, const char *str)
 	char *cpy;
 	int i = 0;
 
-	if (new == '\0')
-		return ('\0');
 	cpy = strdup(str);
+	if (new == NULL && cpy == NULL)
+		return (NULL);
+
 	while (cpy[i])
 		i++;
-	if (cpy == '\0' && str != '\0')
-	{
-		free(new);
-		str++;
-	return ('\0');
-	}
+
 	new->str = cpy;
 	new->len = i;
 	new->next = *head;
 	*head = new;
+
 	return (new);
 }
