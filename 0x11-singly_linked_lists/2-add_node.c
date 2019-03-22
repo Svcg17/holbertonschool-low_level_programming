@@ -14,10 +14,10 @@ list_t *add_node(list_t **head, const char *str)
 	int i = 0;
 
 	cpy = strdup(str);
-	if (new == NULL && cpy == NULL)
+	if (new == NULL || cpy == NULL)
 		return (NULL);
 
-	while (cpy[i])
+	while (cpy[i] != '\0')
 		i++;
 
 	new->str = cpy;
