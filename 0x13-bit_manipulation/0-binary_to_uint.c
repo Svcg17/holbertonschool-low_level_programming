@@ -19,26 +19,27 @@ int _strlen(const char *s)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int longitud = _strlen(b) - 1;
+	int longitud;
 	int value = 0;
 	int mult = 1;
-	char s;
 	int i;
+	char s;
 
-	if (b == NULL || *b == '\0')
-		return ('\0');
+	if (b == NULL)
+		return (0);
 
-	for (i = longitud; i >= 0; i--)
+	longitud = _strlen(b);
+	for (i = longitud - 1; i >= 0; i--)
 	{
 		s = b[i];
-		if (b[i] == '\0' || b[i] > '1' || b[i] < '0')
-			return ('\0');
-		else if (s == '1')
+		if (s != '1' && s != '0')
+			return (0);
+
+		if (s == '1')
 		{
 			value += mult;
 		}
 		mult = mult * 2;
 	}
 	return (value);
-
 }
