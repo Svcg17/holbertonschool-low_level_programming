@@ -25,13 +25,13 @@ unsigned int binary_to_uint(const char *b)
 	char s;
 	int i;
 
-	if (b == NULL)
+	if (b == NULL || *b == '\0')
 		return ('\0');
 
 	for (i = longitud; i >= 0; i--)
 	{
 		s = b[i];
-		if (b[i] > '1' || b[i] < '0')
+		if (b[i] == '\0' || b[i] > '1' || b[i] < '0')
 			return ('\0');
 		else if (s == '1')
 		{
