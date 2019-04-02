@@ -19,9 +19,6 @@ int create_file(const char *filename, char *text_content)
 	if (file < 0)
 		return (-1);
 
-	if (text_content == NULL)
-		return (-1);
-
 	for (len = 0; text_content[len]; len++)
 		;
 
@@ -29,8 +26,6 @@ int create_file(const char *filename, char *text_content)
 
 	if (w < 0)
 		return (-1);
-
-	}
 	close(file);
 	return (1);
 }
