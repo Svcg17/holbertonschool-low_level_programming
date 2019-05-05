@@ -1,6 +1,30 @@
 #include "lists.h"
 #include <stdio.h>
 /**
+ * addnode - adds node
+ * @new: new node to add
+ * @current: node previous to new node
+ */
+void addnode(dlistint_t *new, dlistint_t *current)
+{
+
+	new->next = current->next;
+	current->next->prev = new;
+	current->next = new;
+	new->prev = current;
+}
+/**
+ * appendnodeend - appends node at the end of list
+ * @new: new node to add
+ * @current: node previous to new node
+ */
+void appendnodeend(dlistint_t *new, dlistint_t *current)
+{
+	new->prev = current;
+	current->next = new;
+	new->next = NULL;
+}
+/**
  * insert_dnodeint_at_index - insert a new node at a given position
  * @h: pointer to the pointer to the first node of a list.
  * @idx: index of the list where the new node should be added.
@@ -15,22 +39,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (h == NULL || new == NULL)
 		return (NULL);
-
 	new->n = n;
 	new->prev = NULL;
-	new->next = NULL;
-	if (*h == NULL)
+	if (*h == NULL && idx == 0)
 	{
-		if (idx == 0)
-		{
-			*h = new;
-			return (new);
-		}
-		else
-		{
-			free(new);
-			return (NULL);
-		}
+		*h = new;
+		return (new);
+	}
+	else if (*h == NULL && idx > 0)
+	{
+		free(new);
+		return (NULL);
 	}
 	if (idx == 0)
 	{
@@ -46,9 +65,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		else
 			return (NULL);
 	}
-	new->next = current->next;
-	current->next->prev = new;
-	current->next = new;
-	new->prev = current;
+	if (current->next == NULL)
+	{
+		appendnodeend(new, current);
+		return (new);
+	}
+	addnode(new, current);
 	return (new);
 }
