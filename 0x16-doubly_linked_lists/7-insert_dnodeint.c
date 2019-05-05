@@ -13,7 +13,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *current = *h;
 	unsigned int i;
 
-	if (new == NULL || h == NULL)
+	if (h == NULL || new == NULL)
 		return (NULL);
 
 	new->n = n;
