@@ -9,7 +9,9 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *hasht = malloc(sizeof(hash_table_t));
 
-	if (hasht == NULL || size < 1)
+	if (size < 1)
+		return (NULL);
+	if (hasht == NULL)
 		return (NULL);
 	hasht->array = calloc(size, sizeof(hash_node_t));
 	if (hasht->array == NULL)
