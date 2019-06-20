@@ -25,6 +25,9 @@ void selection_sort(int *array, size_t size)
 {
 	size_t i, new, min_val;
 
+	if (array == NULL || size == 0)
+		return;
+
 	/* loop through entire array*/
 	for (i = 0; i < size - 1; i++)
 	{
@@ -32,7 +35,7 @@ void selection_sort(int *array, size_t size)
 		min_val = i;
 		/*get min value from numbers in the array*/
 		/*start from second number(excluding current min value)*/
-		for(new = i + 1; new < size; new++)
+		for (new = i + 1; new < size; new++)
 		{
 			if (array[new] < array[min_val])
 				min_val = new;
