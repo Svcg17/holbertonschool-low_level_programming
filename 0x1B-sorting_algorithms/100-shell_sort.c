@@ -12,7 +12,7 @@ void shell_sort(int *array, size_t size)
 	int temp;
 	size_t i, j, gap = 1;
 
-	if (!array || !size)
+	if (!array || !size || size == 1)
 		return;
 
 	/*set gap value*/
@@ -26,7 +26,7 @@ void shell_sort(int *array, size_t size)
 			temp = array[i];
 			j = i;
 			/* checks to see if the leftmost gap value ismore than the current gap*/
-			while (j > gap - 1 && array[j - gap] >= temp)
+			while (j >= gap - 1 && array[j - gap] > temp)
 			{
 				/*swap values*/
 				array[j] = array[j - gap];
