@@ -8,6 +8,3 @@ OBJ = $(SRC:.c=.o)
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-main.o: main.c m.h
-holberton.o: holberton.c m.h
