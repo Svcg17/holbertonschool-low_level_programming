@@ -1,0 +1,6 @@
+#Build an executable: holberton with rule: all with variables: CC and SRC
+SRC_DIR = src
+CC = gcc
+SRC = main.c holberton.c
+all: holberton
+	$(CC) $(SRC) -o holberton
