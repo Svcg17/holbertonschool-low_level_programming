@@ -21,4 +21,5 @@ clean:
 	$(RM) *~ $(NAME)
 
 re:
+	$(RM) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
