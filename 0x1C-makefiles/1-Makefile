@@ -2,5 +2,5 @@
 SRC_DIR = src
 CC = gcc
 SRC = main.c holberton.c
-all: holberton
+all: main.c holberton.c m.h
 	$(CC) $(SRC) -o holberton
