@@ -1,0 +1,24 @@
+#Build an executable: holberton with rules: all with variables: CC, SRC, OBJ, NAME
+SRC_DIR = src
+OBJ_DIR = obj
+NAME = holberton
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+RM = rm -f
+
+all: $(OBJ) 
+	$(CC) $(OBJ) -o $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	$(RM) *~ $(OBJ) $(NAME) 
+	$(RM) $(OBJ)
+
+clean:
+	$(RM) *~ $(NAME)
+
+re:
+	$(CC) $(OBJ) -o $(NAME)
