@@ -1,3 +1,6 @@
 #build an executable named holberton with rule: all
 all: holberton
-	gcc main.c holberton.c m.h -o holberton
+	gcc main.c holberton.c -o holberton
+
+clean:
+	$(RM) holberton
