@@ -1,0 +1,6 @@
+#build an executable named holberton from 
+all: holberton.c main.c m.h
+	gcc main.c holberton.c -o holberton
+
+clean:
+	$(RM) holberton
