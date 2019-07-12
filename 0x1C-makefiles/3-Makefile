@@ -10,7 +10,7 @@ RM = rm -f
 all: $(OBJ) 
 	$(CC) $(OBJ) -o $(NAME)
 
-.PHONY: clean oclean fclean re
+.PHONY: clean
 
 clean:
 	$(RM) *~ $(NAME)
