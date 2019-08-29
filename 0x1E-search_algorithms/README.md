@@ -147,7 +147,7 @@ Searching in array: 8, 9
 Searching in array: 9
 Found 999 at index: -1
 ```
-### [Big O #0 ](./2-O)
+### [2. Big O #0 ](./2-O)
 What is the time complexity (worst case) of a linear search in an array of size n?
 
 ### [3. Big O #1](./3-O)
@@ -238,10 +238,10 @@ Value checked array[9] = [9]
 Found 999 at index: -1
 ```
 
-### [8. Big O #5] (./101-O)
+### [8. Big O #5](./101-O)
 What is the time complexity (average case) of a jump search in an array of size n, using step = sqrt(n)?
 
-### [9. Interpolation search] (./102-interpolation.c)
+### [9. Interpolation search](./102-interpolation.c)
 Write a function that searches for a value in a sorted array of integers using the Interpolation search algorithm
 
 Prototype : `int interpolation_search(int *array, size_t size, int value);`
