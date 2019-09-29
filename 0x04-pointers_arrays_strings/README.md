@@ -101,14 +101,15 @@ int main(void)
 julien@ubuntu:~/0x05$ gcc -Wall -pedantic -Werror -Wextra 2-main.c 2-strlen.c -o 2-strlen
 julien@ubuntu:~/0x05$ ./2-strlen 
 10
-juloien@ubuntu:~/0x05$ 
-	```
+juloien@ubuntu:~/0x05$
+```
 
 ### [3. I do not fear computers. I fear the lack of them](./3-puts.c)
 Write a function that prints a string, followed by a new line, to stdout.
 
 - Prototype: `void _puts(char *str);`
 - FYI: The standard library provides a similar function: puts. Run man puts to learn more.
+
 ```
 julien@ubuntu:~/0x05$ cat 3-main.c
 #include "holberton.h"
