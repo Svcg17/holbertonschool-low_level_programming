@@ -27,6 +27,6 @@ Project about the usage of dynamic memory allocation in C, using malloc and free
 2. He who is not courageous enough to take risks will accomplish nothing in life  : Write a function that concatenates two strings.
 3. If you even dream of beating me you'd better wake up and apologize: Write a function that returns a pointer to a 2 dimensional array of integers.
 4. It's not bragging if you can back it up : Write a function that frees a 2 dimensional grid previously created by your alloc_grid function.
-5. It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe : Write a function that concatenates all the arguments of your program
+5. It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe : Write a function that concatenates all the arguments of the program
 ## Author
 Sofia Cheung
